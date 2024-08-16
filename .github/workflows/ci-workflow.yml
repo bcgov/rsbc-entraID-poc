@@ -11,7 +11,11 @@ on:
         type: string
       DOCKER_IMAGE_NAME:
         # required: true
+        type: string      
+      DOCKER_IMAGE_TAG:
+        required: false
         type: string
+        default: latest  
     secrets:
       DOCKER_REGISTRY:
         required: true
