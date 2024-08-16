@@ -63,3 +63,14 @@ jobs:
           build-args: |
             VERSION=${{ steps.tag.outputs.new_version }}          
           tags: ${{ secrets.DOCKER_REGISTRY }}/dbe7-images/${{ inputs.DOCKER_IMAGE_NAME }}:${{ inputs.DOCKER_IMAGE_TAG }}  
+      - name: Authenticate and set context for tools namespace
+        uses: redhat-actions/oc-login@v1.1.2
+        with:
+          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER_URL_SILVER }}
+          openshift_token: ${{ secrets.OPENSHIFT_SA_PIPELINE_TOKEN_SILVER }}
+          namespace: "${{ secrets.OPENSHIFT_LICENSE_PLATE_SILVER }}-tools"
+      - name: Trigger Image import
+        env:
+          IMAGE_NAME: ${{ inputs.DOCKER_IMAGE_NAME }}
+        run: |
+          oc import-image $IMAGE_NAME:latest --confirm
