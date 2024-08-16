@@ -2,14 +2,8 @@ name: hello-world-ci.yml
 
 on:
   push:
-    types: [opened, reopened, edited, synchronize]
-    branches-ignore:
-      - master
+    branches:
       - main
-    paths:
-      - ./**
-      - .github/workflows/hello-world-ci.yml
-      - trigger.txt
 
 jobs:
   CI:
