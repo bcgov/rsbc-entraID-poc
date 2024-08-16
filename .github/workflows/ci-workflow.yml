@@ -38,10 +38,6 @@ jobs:
       - name: Build the app
         env:
           CI: ""
-          REACT_APP_KEYCLOAK_URL: ${{ secrets.REACT_APP_KEYCLOAK_URL }}
-          REACT_APP_KEYCLOAK_REALM: ${{ secrets.REACT_APP_KEYCLOAK_REALM }}
-          REACT_APP_KEYCLOAK_CLIENT_ID: ${{ secrets.REACT_APP_KEYCLOAK_CLIENT_ID }}
-          REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL_DEV }}
         run: |
           npm run build:ci
       - name: Run Tests

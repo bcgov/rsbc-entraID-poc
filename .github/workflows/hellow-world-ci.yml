@@ -18,4 +18,4 @@ jobs:
       DOCKER_CONTEXT: .
       DOCKER_FILE: ./Dockerfile
       DOCKER_IMAGE_NAME: hello-world-react
-    secrets: inheritc:\Users\JaiseT\Documents\Road Safety\code\rsbc-digital-forms\.github\workflows\ci-workflow.yml
+    secrets: inherit
