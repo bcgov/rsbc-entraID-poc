@@ -1,7 +1,7 @@
 name: hello-world-ci.yml
 
 on:
-  pull_request:
+  push:
     types: [opened, reopened, edited, synchronize]
     branches-ignore:
       - master
